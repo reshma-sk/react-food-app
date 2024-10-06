@@ -1,13 +1,17 @@
 {
   "name": "09-optimising-app",
+  "homepage": "https://github.com/reshma-sk/react-food-app",
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "test": "jest"
   },
   "author": "reshma",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "parcel": "^2.12.0",
     "postcss": "^8.4.47",
     "process": "^0.11.10",
