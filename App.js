@@ -15,10 +15,9 @@ import RestaurantMenu from "./src/components/RestaurantMenu";
 const App = ()=>{
     return(    
         <div>
-          "Hello Testing..."
-            {/* <Header/>
+            <Header/>
             <Outlet/>
-            <Footer/> */}
+            <Footer/>
         
         </div>
     )
