@@ -1,8 +1,10 @@
 {
   "name": "09-optimising-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "react app",
   "scripts": {
+    "start": "parcel index.html",
+    "build" : "parcel build index.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "jest"
