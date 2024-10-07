@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{lazy,Suspense} from 'react';
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Login from './src/components/Login';
@@ -10,8 +10,8 @@ import RestaurantMenu from "./src/components/RestaurantMenu";
 import { RestaurantShimmer } from './src/components/Shimmer';
 import "./index.css"
 
-const About = lazy(() => import("./components/About"));
-const Body = lazy(() => import("./components/Body"));
+const About = lazy(() => import("./src/components/About"));
+const Body = lazy(() => import("./src/components/Body"));
 
 const App = ()=>{
     return(    
