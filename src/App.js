@@ -15,7 +15,7 @@ const Body = lazy(() => import("./components/Body"));
 
 const AppLayOut = ()=>{
     return(    
-        <div className="w-full flex flex-col justify-between items-center mt-[120px] min-h-[calc(100vh-120px)]">
+        <div className="app">
             <Header/>
             <Outlet/>
             <Footer/>
