@@ -1,5 +1,5 @@
 import React,{lazy,Suspense} from 'react';
-import ReactDOM from "react-dom/client";
+import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Login from './components/Login';
 import Header from "./components/Header";
@@ -18,7 +18,7 @@ const AppLayOut = ()=>{
         <div className="app">
             <Header/>
             <Outlet/>
-            <Footer/>
+            <Footer/> 
         </div>
     );
 };
