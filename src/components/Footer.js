@@ -1,6 +1,7 @@
 //import {LINKEDIN_LINK} from "../../../../public/common/constants";
 import { LNKDIN_URL } from "../utils/constants";
 const Footer = () => {
+  console.log("Footer Renderin Starts");
   const year = new Date().getFullYear();
   return (
     <div className="footer">

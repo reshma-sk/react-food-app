@@ -7,7 +7,9 @@ import useOnlineStatus from "../hooks/useOnlineStatus";
 //import "../styles/Header.css";
 
 const Header = () => {
+  console.log("Header Rendering Starts...")
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  console.log("isLoggedIn:" + isLoggedIn);
   const isOnline = useOnlineStatus();
   const navigate = useNavigate();
   return (
