@@ -14,11 +14,14 @@ const About = lazy(() => import("./components/About"));
 const Body = lazy(() => import("./components/Body"));
 
 const App = ()=>{
-    return(    
-        <div className="app">
+    return(   
+      <>
+      <div className="app">
             <Header />
              
         </div>
+      </> 
+        
     );
 };
 const appRouter = createBrowserRouter([

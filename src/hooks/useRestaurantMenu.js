@@ -3,6 +3,7 @@ import { MENU_URL } from "../utils/constants";
 
 const useRestaurantMenu = (resId)=>{
     const [restaurantInfo, setRestaurantInfo] = useState(null);
+    
     const fetchMenusData = async () => {
       try {
         const data = await fetch(MENU_URL + resId);
