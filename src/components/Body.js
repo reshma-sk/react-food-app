@@ -1,5 +1,5 @@
 import { useState} from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withDiscountOffer} from "./RestaurantCard";
 import { RestaurantShimmer } from "./Shimmer";
 import useRestaurantData from "../hooks/useRestaurantData";
 import useOnlineStatus from "../hooks/useOnlineStatus";
@@ -12,6 +12,8 @@ const Body = () => {
   const [searchRestaurant, setSearchRestaurant] = useState("");
   const [restaurantName, setRestaurantName] = useState("");
   const [showTopRated, setShowTopRated] = useState(true);
+
+  const RestaurantCardWithDiscount = withDiscountOffer(RestaurantCard)
 
   const isOnline = useOnlineStatus();
   const[listOfRestaurants,filteredRestaurants,setFilteredRestaurants] = useRestaurantData();
