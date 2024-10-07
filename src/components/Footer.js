@@ -1,19 +1,21 @@
-//import {LINKEDIN_LINK} from "../../../../public/common/constants";
 import { LNKDIN_URL } from "../utils/constants";
+
 const Footer = () => {
-  console.log("Footer Renderin Starts");
   const year = new Date().getFullYear();
+
   return (
-    <div className="footer">
+    <div className="w-full flex items-center justify-center gap-[2px] p-[18px] mt-[30px] bg-[#ffffff] shadow-[2px_7px_5px_6px_#0000009c]">
       Created By
-      <span>❤️</span>
-      <a className="linkedin-name" href={LNKDIN_URL} target="_blank">
-        Reshma
+      <span className="text-xl">❤️</span>
+      <a className="text-purple-900 font-bold" href={LNKDIN_URL} target="_blank">
+        Reshma Shaik
       </a>
-      <span>&copy;</span>
-      {year}
-      <strong>
-        <span> Spoons &  Forks</span>
+      <div>
+        <span className="mx-[5px] text-[20px]">&copy;</span>
+        {year}
+      </div>
+      <strong className="pl-[5px]">
+        Spoons <span className="text-[#E46F20]">& Forks</span>
       </strong>
     </div>
   );

@@ -3,7 +3,8 @@ import RestaurantCard from "./RestaurantCard";
 import { RestaurantShimmer } from "./Shimmer";
 import useRestaurantData from "../hooks/useRestaurantData";
 import useOnlineStatus from "../hooks/useOnlineStatus";
-//import "../styles/Body.css"
+import UserOffline from './UserOffline.js';
+//import "../styles/Body.css";
 
 
 const Body = () => {
@@ -11,6 +12,7 @@ const Body = () => {
   const [searchRestaurant, setSearchRestaurant] = useState("");
   const [restaurantName, setRestaurantName] = useState("");
   const [showTopRated, setShowTopRated] = useState(true);
+
   const isOnline = useOnlineStatus();
   const[listOfRestaurants,filteredRestaurants,setFilteredRestaurants] = useRestaurantData();
 
@@ -23,7 +25,14 @@ const Body = () => {
     setFilteredRestaurants(filtered);
     setSearchRestaurant(""); // Clear the search input box after search
     setRestaurantName(searchRestaurant);
+
+    if(filtered.length === 0){
+      setShowTopRated(false)
+    }else{
+      setShowTopRated(true);
+    }
   };
+
   const handleTopRated = () => {
     const topRated = listOfRestaurants.filter(
       (res) => res.info.avgRating >= 4.4
@@ -32,7 +41,7 @@ const Body = () => {
     setRestaurantName("Top Rated");
   };
 
-   const showAllRestaurant = () => {
+  const showAllRestaurant = () => {
     setFilteredRestaurants(listOfRestaurants);
     setRestaurantName("");
     setShowTopRated(true);

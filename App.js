@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import "./index.css";
 import Login from './src/components/Login';
@@ -14,13 +14,13 @@ import RestaurantMenu from "./src/components/RestaurantMenu";
 
 const App = ()=>{
     return(    
-        <div className='app'>
+        <div className="w-full flex flex-col justify-between items-center mt-[120px] min-h-[calc(100vh-120px)]">
             <Header/>
             <Outlet/>
             <Footer/>
         </div>
-    )
-}
+    );
+};
 const appRouter = createBrowserRouter([
   {
     path: "/",

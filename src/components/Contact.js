@@ -4,15 +4,18 @@ import "../styles/Contact.css"
 
 const Contact = () => {
   const[message,setMessage] = useState(false)
+
   const handleSubmit = (e)=>{
     e.preventDefault();
     setMessage(true)
   }
+
   return (
     <div className="contact-container">
       <div className="contact-left">
         <img src={CONTACT_IMG} alt="" />
       </div>
+      
       <div className="contact-right">
         <h1>Contact Us</h1>
         <form onSubmit={handleSubmit}>

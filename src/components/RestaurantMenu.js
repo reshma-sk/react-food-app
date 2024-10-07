@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { MENU_URL,CDN_URL } from "../utils/constants";
 import { RestaurantMenuShimmer } from "./Shimmer";
 import { MdStarRate } from "react-icons/md";

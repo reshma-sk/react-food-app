@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 const useOnlineStatus = ()=>{
     const[isOnline, setIsOnline] = useState(true)
+    
     useEffect(()=>{
         const handleOnline = ()=>{
             setIsOnline(true)

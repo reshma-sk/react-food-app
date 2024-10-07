@@ -1,14 +1,15 @@
-//import errorImage from "../../../../public/images/error-image.jpg";
+import { ERR_IMG } from "../utils/constants";
 import { Link, useRouteError } from "react-router-dom";
+import '../styles/Error.css';
 
 const Error = () => {
   const err = useRouteError();
 
   return (
     <div className="error-page">
-      {/*<div className="error-image">
-        <img src={errorImage} alt="Error Image" />
-      </div>*/}
+      <div className="error-image">
+        <img src={ERR_IMG} alt="Error Image" />
+      </div>
 
       <div className="error-details">
         <h1>Oops! Something Went Wrong!!</h1>

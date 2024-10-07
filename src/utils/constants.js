@@ -5,3 +5,4 @@ export const MENU_URL = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/
 export const LNKDIN_URL = "https://www.linkedin.com/in/reshmask/";
 export const CONTACT_IMG = "https://wallpapers.com/images/hd/friendly-contact-us-sign-woman-p1ku6w18tswg9cwa.png";
 export const BURGER_IMG = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzlNwrD3ds3JgHe3hTMBiNkkJwDzkU1ry6ag&s"
+export const ERR_IMG = "https://d33v4339jhl8k0.cloudfront.net/docs/assets/5dd5117904286364bc91f51d/images/5ffd97a0c64fe14d0e1f9e1c/file-598ePkwOlN.png";

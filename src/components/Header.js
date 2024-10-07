@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link,useNavigate} from "react-router-dom";
-//import tastyTrailsLogo from "../../../../public/images/tasty-trails-logo.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../hooks/useOnlineStatus";
-//import "../styles/Header.css";
+
 
 const Header = () => {
-  console.log("Header Rendering Starts...")
+  
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   console.log("isLoggedIn:" + isLoggedIn);
   const isOnline = useOnlineStatus();
@@ -35,6 +34,7 @@ const Header = () => {
             </Link>
           </li>
           <li className="p-2 cursor-pointer text-inherit hover:text-white hover:bg-[#E46F20] hover:rounded-[5px]"><FaCartArrowDown /></li>
+          
           {isLoggedIn ? (
             <button className="px-2 py-[6px] cursor-pointer text-inherit hover:text-white hover:bg-[#E46F20] hover:rounded-[5px]" onClick={() => setIsLoggedIn(false)}>
               Logout
