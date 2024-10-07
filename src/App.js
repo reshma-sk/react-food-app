@@ -1,4 +1,4 @@
-import React,{lazy,Suspense} from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Login from './components/Login';
@@ -8,21 +8,23 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { RestaurantShimmer } from './components/Shimmer';
-import "../index.css"
+
 
 const About = lazy(() => import("./components/About"));
 const Body = lazy(() => import("./components/Body"));
 
-const App = ()=>{
-    return(   
-      <>
-      <div className="app">
-            <Header />
-             
-        </div>
-      </> 
-        
-    );
+const App = () => {
+  return (
+
+    <div className="app">
+      <Header />
+      <Outlet />
+      <Footer />
+
+    </div>
+
+
+  );
 };
 const appRouter = createBrowserRouter([
   {
@@ -32,8 +34,8 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: (
-          <Suspense fallback={<RestaurantShimmer/>}>
-            <Body/>
+          <Suspense fallback={<RestaurantShimmer />}>
+            <Body />
           </Suspense>
         ),
       },
@@ -47,14 +49,14 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact/>,
+        element: <Contact />,
       },
       {
         path: "/restaurants/:resId",
-        element: <RestaurantMenu/>,
+        element: <RestaurantMenu />,
       },
     ],
-    errorElement: <Error/>,
+    errorElement: <Error />,
   },
   {
     path: "/login",
@@ -67,4 +69,4 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter}/>)
+root.render(<RouterProvider router={appRouter} />)
