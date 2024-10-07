@@ -13,7 +13,7 @@ import "../index.css"
 const About = lazy(() => import("./components/About"));
 const Body = lazy(() => import("./components/Body"));
 
-const App = ()=>{
+const AppLayOut = ()=>{
     return(    
         <div className="w-full flex flex-col justify-between items-center mt-[120px] min-h-[calc(100vh-120px)]">
             <Header/>
@@ -25,13 +25,13 @@ const App = ()=>{
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <AppLayOut/>,
     children: [
       {
         path: "/",
         element: (
           <Suspense fallback={<RestaurantShimmer/>}>
-            <Body />
+            <Body/>
           </Suspense>
         ),
       },
