@@ -10,6 +10,10 @@
     "deploy": "gh-pages -d dist",
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/reshma-sk/react-food-app.git"
+  },
   "author": "reshma",
   "license": "ISC",
   "devDependencies": {
