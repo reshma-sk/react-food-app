@@ -13,19 +13,18 @@ import "../index.css"
 const About = lazy(() => import("./components/About"));
 const Body = lazy(() => import("./components/Body"));
 
-const AppLayOut = ()=>{
+const App = ()=>{
     return(    
         <div className="app">
-            <Header/>
-            <Outlet/>
-            <Footer/> 
+            <Header />
+             
         </div>
     );
 };
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayOut/>,
+    element: <App />,
     children: [
       {
         path: "/",
