@@ -56,9 +56,9 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (
     <RestaurantShimmer />
   ) : (
-    <div className="w-[90%] flex flex-col items-center transition-all">
+    <div className="w-[90%] flex flex-col items-center transition-all mt-10">
       <div className="w-[80%] flex justify-between items-center mb-[30px]">
-        <div className="w-[70%] flex justify-center items-center">
+        <div className="w-[70%] flex justify-center items-center mt-16">
           <input
             className="w-[90%] py-[6px] px-[10px] text-[1.2rem] text-[#3d3d3d] bg-transparent border-1 border-[#818181] border-r-0 border-[1px] rounded-l-[8px] outline-none focus:border-[#E46F20] transition-all"
             type="text"
@@ -71,7 +71,7 @@ const Body = () => {
           </button>
         </div>
         {showTopRated ? (
-          <button className="py-[7px] px-[10px] text-[1.2rem] text-[#fff] bg-[#E46F20] rounded-[8px] border-none hover:bg-[#016034]" onClick={handleTopRated}>
+          <button className="py-[7px] px-[10px] mt-7 text-[1.2rem] text-[#fff] bg-[#E46F20] rounded-[8px] border-none hover:bg-[#016034]" onClick={handleTopRated}>
             Top Rated Restaurants
           </button>
         ) : (
