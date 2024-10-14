@@ -10,8 +10,14 @@ const useRestaurantData = ()=>{
     try {
       const data = await fetch(SWIGGY_API_URL);
       const json = await data.json();
-      const restaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle.restaurants;
+      console.log(json);
+      
+      const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle.restaurants;
+      console.log(restaurants);
+      
       setListOfRestaurants(restaurants);
+      console.log(listOfRestaurants);
+      
       setFilteredRestaurants(restaurants);
     } catch (error) {
       console.error("Error fetching data:", error);

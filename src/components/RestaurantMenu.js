@@ -1,13 +1,17 @@
+import React,{ useState } from "react";
 import { MENU_URL,CDN_URL } from "../utils/constants";
 import { RestaurantMenuShimmer } from "./Shimmer";
 import { MdStarRate } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import "../styles/RestaurantMenu.css";
 import useRestaurantMenu from "../hooks/useRestaurantMenu";
+import RestaurantMenuCategory from "./RestaurantMenuCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const restaurantInfo = useRestaurantMenu(resId)
+  const [showIndex, setShowIndex] = React.useState(0);
+
   if (restaurantInfo === null) {
     return <RestaurantMenuShimmer />;
   }
@@ -24,79 +28,29 @@ const RestaurantMenu = () => {
   const cards =
     restaurantInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
 
-  let itemCards =
-    cards.find((c) => c?.card?.card?.itemCards)?.card?.card?.itemCards || [];
+  const categories = cards.filter(
+    (c) =>
+      c?.card?.["card"]?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
 
   return (
-    <div className="menu">
-      <div className="restaurant-header">
-        <img src={CDN_URL + cloudinaryImageId} alt={name} />
-        <div className="restaurant-header-details">
-          <h1>{name}</h1>
-          <h3>{locality}</h3>
-          <p>{cuisines?.join(", ")}</p>
-          <h4 className="rating-time">
-            <div className="rating">
-              <MdStarRate
-                className="rating-logo"
-                style={{
-                  backgroundColor:
-                    avgRatingString >= 4.0 ? "var(--green)" : "var(--red)",
-                }}
-              />
-              <span>
-                {avgRatingString || 3.8} ({totalRatingsString || "1K+ ratings"})
-              </span>
-            </div>
-            <span>|</span>
-            <span className="time">{sla?.slaString}</span>
-          </h4>
-        </div>
+    <div className="w-[90%] flex flex-col m-14">
+      <div className="m-8 text-center text-lg font-bold"><h1>Menu</h1></div>
+      
+      <div>
+        {categories.map((category, index) => (
+        // Controlled Component
+        <RestaurantMenuCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+          showMenuItems={index === showIndex}
+          setShowIndex={() => setShowIndex(index === showIndex ? null : index)}
+        />
+      ))}
       </div>
-
-      {itemCards.length ? (
-        itemCards.map((item) => {
-          const {
-            id,
-            name,
-            price,
-            defaultPrice,
-            ratings,
-            imageId,
-            description,
-          } = item.card.info;
-          return (
-            <div key={id} className="menu-items">
-              <div className="left">
-                <h2>{name}</h2>
-                <h4>₹{price / 100 || defaultPrice / 100}</h4>
-                <p>{description && description.slice(0, 60) || "Dummy"}</p>
-                <h4 className="rating">
-                  <MdStarRate
-                    className="rating-logo"
-                    style={{
-                      backgroundColor:
-                        ratings?.aggregatedRating?.rating >= 4.0
-                          ? "var(--green)"
-                          : "var(--red)",
-                    }}
-                  />
-                  <span>
-                    {ratings?.aggregatedRating?.rating || 3.8} (
-                    {ratings?.aggregatedRating?.ratingCountV2 || 6})
-                  </span>
-                </h4>
-              </div>
-              <div className="right">
-                <img src={CDN_URL + imageId} alt={name} />
-                <button className="add-btn">ADD</button>
-              </div>
-            </div>
-          );
-        })
-      ) : (
-        <h2>No items available</h2>
-      )}
+     
+      
     </div>
   );
 };

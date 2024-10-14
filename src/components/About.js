@@ -3,16 +3,16 @@ import "../styles/About.css";
 import { BURGER_IMG } from "../utils/constants";
 
 const About = () => {
-   const [showProfile, setShowProfile] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
   return (
       <div className="about-container">
-        <div className="show-profile">
+        {/*<div className="show-profile">
           {
             <button className="user-btn" onClick={()=>setShowProfile(!showProfile)}>
               {showProfile ? "Hide my profile" : "Show my profile"}
             </button>
           }
-        </div>
+        </div>*/}
 
         <div className="about">
         <div className="about-left">
@@ -21,8 +21,7 @@ const About = () => {
             <span>Spoons & Forks</span>
           </h1>
           <h4>
-            "Better you will feel if you eat a <span>Spoons & Forks</span> healthy
-            meal"
+            "Eat <span>good</span> feel <span>good</span>"
           </h4>
         </div>
         <div className="about-right">

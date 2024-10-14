@@ -28,11 +28,7 @@ const Header = () => {
               Contact
             </Link>
           </li>
-          <li>
-            <Link className="p-2 cursor-pointer text-inherit hover:text-white hover:bg-[#E46F20] hover:rounded-[5px]" to="/grocery">
-              Grocery
-            </Link>
-          </li>
+          
           <li className="p-2 cursor-pointer text-inherit hover:text-white hover:bg-[#E46F20] hover:rounded-[5px]"><FaCartArrowDown /></li>
           
           {isLoggedIn ? (
